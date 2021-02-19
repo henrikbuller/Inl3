@@ -1,0 +1,106 @@
+/*
+Copyright 2020 Hampus Ram <hampus.ram@educ.goteborg.se>.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+body {
+    background-color: lightblue;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+.button-container>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+button {
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 0px coral;
+    transition: all 0.5s;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin: 1px;
+    padding: 14px 0.5rem;
+}
+
+.button-container>div>button {
+    width: 100%;
+}
+
+button:hover {
+    box-shadow: inset 250px 0px 0px coral;
+}
+
+#search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+#search-container>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 50%;
+}
+
+#search-field {
+    height: 50px;
+    font-size: 22px;
+    margin-left: 0.5rem;
+    margin: 1px;
+    padding: 14px 0.5rem;
+    width: 100%;
+    min-width: 4px;
+}
+
+#search-button-wrapper {
+    flex-wrap: 1;
+    width: 50%;
+}
+
+#search-button {
+    width: 100%;
+}
+
+.fortune-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+pre {
+    white-space: pre-wrap;
+    /* border: 1px solid red; */
+    background-color: white;
+    overflow-x: hidden;
+    padding: 0.5em;
+}
+
+#fortune {
+    background-color: white;
+    /* border: 1px solid red; */
+    padding: 0.5em;
+    /* don't show this until we have data in it */
+    visibility: hidden;
+}
