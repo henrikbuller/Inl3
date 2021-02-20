@@ -23,6 +23,8 @@ window.addEventListener("load", () => {
 
     const fortunes = document.getElementById("fortunes")
 
+    
+    
     async function fortuneGenerator(API, action) {
         try {
             let resp = await fetch(API)
@@ -49,6 +51,8 @@ window.addEventListener("load", () => {
             window.alert(err)
         }
     }
+
+    fortuneGenerator(randomAPI, "get")
 
     const elems = {
         random: randomAPI,

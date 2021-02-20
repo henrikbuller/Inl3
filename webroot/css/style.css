@@ -15,7 +15,20 @@ limitations under the License.
 */
 
 body {
-    background-color: lightblue;
+    background-color: #264653;
+}
+
+#header {
+    color: #2a9d8f;
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+    justify-content: center;
+}
+
+#header > h1 {
+    margin: 0.5rem;
+    color: #e9c46a;
 }
 
 .button-container {
@@ -24,7 +37,7 @@ body {
     justify-content: stretch;
 }
 
-.button-container>* {
+.button-container > * {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,21 +46,21 @@ body {
 
 button {
     box-sizing: border-box;
-    box-shadow: inset 0px 0px 0px coral;
+    box-shadow: inset 0px 0px 0px #e9c46a;
     transition: all 0.5s;
-    background-color: #4CAF50;
+    background-color: #e76f51;
     color: white;
     cursor: pointer;
     margin: 1px;
     padding: 14px 0.5rem;
 }
 
-.button-container>div>button {
+.button-container > div > button {
     width: 100%;
 }
 
 button:hover {
-    box-shadow: inset 250px 0px 0px coral;
+    box-shadow: inset 400px 0px 0px #e9c46a;
 }
 
 #search-container {
@@ -56,7 +69,7 @@ button:hover {
     justify-content: stretch;
 }
 
-#search-container>* {
+#search-container > * {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,4 +116,14 @@ pre {
     padding: 0.5em;
     /* don't show this until we have data in it */
     visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    pre {
+        font-size: 14px;
+    }
 }
