@@ -46,6 +46,7 @@ window.addEventListener("load", () => {
             }
         } catch (err) {
             console.error(err)
+            window.alert(err)
         }
     }
 
@@ -63,6 +64,7 @@ window.addEventListener("load", () => {
 
     //Search field
     let searchField = document.getElementById("search-field")
+
     let input = searchField.addEventListener("keyup", (e) => {
         input = e.target.value
     })
@@ -70,8 +72,15 @@ window.addEventListener("load", () => {
     //Search button
     let searchButton = document.getElementById("search-button")
 
-    //Lägg till text-längd if sats i click funktionen
-    searchButton.addEventListener("click", () => fortuneGenerator(searchAPI + input, "search"))
+    //Click for seach button
+    searchButton.addEventListener("click", () => {
+        if (input.length < 3 || input.value === null) {
+            window.alert("A search must contain at least three characters")
+        }
+
+        fortuneGenerator(searchAPI + input, "search")
+    })
+    //Enter key for search button
     searchField.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
             e.preventDefault()
