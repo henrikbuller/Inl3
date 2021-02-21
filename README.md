@@ -1,3 +1,35 @@
+## Författare
+
+Henrik Büller
+java 20
+
+## Kort om inlämningen
+
+Jag har utgått från koden (yrgohrm/kprog-fortune) och gjort en enkel webbapp som
+kan visa fyra kategorier av fortunes samt en sökfunktion som visar de 10 bästa sökresultaten.
+
+Den är designad mobile first och innehåller media queries för att hantera större enheter.
+
+Händelser styrs av Event Listeners som reagerar på 'click' och 'keypress',
+vad jag förstått och upplevt har dessa bra stöd även på mobila webbläsare med touch.
+
+## Filer
+
+index.html
+
+Innehåller html kod med olika div-containers/-wrappers som gör att
+elementen går att hantera med flex.
+
+style.css
+
+Enkel css kod med min-width brytpunkter på 768px & 912px.
+
+script.js
+
+Javascript koden bygger på async funktionen fortuneGenerator(API, action),
+action=get genererar en fortune från givet API,
+action=search söker efter en fortune.
+
 # kprog-fortune
 
 ## General
@@ -15,7 +47,7 @@ Run with Java 11+ using the fat jar. The program takes two optional parameters
 `-d <webroot>` and `-p <port>` to control where static content is located as
 well as setting the web server port.
 
-By default it uses the port 8080 and the directory webroot in the current 
+By default it uses the port 8080 and the directory webroot in the current
 directory.
 
 `java -jar kprog-fortune-1.0-all.jar`
