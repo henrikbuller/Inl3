@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 /* This page is designed mobile first, and works well from 320px and up. 
-A media query at the end handles screens larger than 768px */
+Media queries at the end handles screens larger than 768px and 912px */
 
 body {
     background-color: #264653;

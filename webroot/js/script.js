@@ -78,7 +78,6 @@ window.addEventListener("load", () => {
             window.alert("A search must contain at least three characters")
             return
         }
-
         fortuneGenerator(searchAPI + searchInput, "search")
     })
 
@@ -91,7 +90,6 @@ window.addEventListener("load", () => {
                 window.alert("A search must contain at least three characters")
                 return
             }
-            console.log(searchInput)
             e.preventDefault()
             fortuneGenerator(searchAPI + searchInput, "search")
         }
