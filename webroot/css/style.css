@@ -29,7 +29,7 @@ body {
     justify-content: center;
 }
 
-#header > h1 {
+#header>h1 {
     color: #e9c46a;
     margin: 0.5rem;
 }
@@ -40,7 +40,7 @@ body {
     justify-content: stretch;
 }
 
-.button-container > * {
+.button-container>* {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,7 @@ button {
     padding: 14px 0.5rem;
 }
 
-.button-container > div > button {
+.button-container>div>button {
     width: 100%;
 }
 
@@ -68,7 +68,7 @@ button {
     justify-content: stretch;
 }
 
-#search-container > * {
+#search-container>* {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,12 +95,6 @@ button {
     width: 100%;
 }
 
-.fortune-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
 pre {
     white-space: pre-wrap;
     background-color: white;
@@ -108,21 +102,22 @@ pre {
     padding: 0.5em;
 }
 
-#fortune {
-    background-color: white;
-    padding: 0.5em;
-}
-
 @media screen and (min-width: 768px) {
-    button:hover {
-        box-shadow: inset 400px 0px 0px #e9c46a;
-        cursor: pointer;
-    }
     body {
         margin-left: 20%;
         margin-right: 20%;
     }
+    button:hover {
+        box-shadow: inset 400px 0px 0px #e9c46a;
+        cursor: pointer;
+    }
     pre {
         font-size: 14px;
+    }
+    @media screen and (min-width: 912px) {
+        body {
+            margin-left: 30%;
+            margin-right: 30%;
+        }
     }
 }

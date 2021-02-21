@@ -24,6 +24,12 @@ window.addEventListener("load", () => {
     const tradAPI = "/api/traditional"
     const searchAPI = "/api/query?q="
 
+    const elems = {
+        random: randomAPI,
+        short: shortAPI,
+        shower: showerAPI,
+        traditional: tradAPI,
+    }
     const fortunes = document.getElementById("fortunes")
 
     async function fortuneGenerator(API, action) {
@@ -58,13 +64,6 @@ window.addEventListener("load", () => {
 
     fortuneGenerator(randomAPI, "get")
 
-    const elems = {
-        random: randomAPI,
-        short: shortAPI,
-        shower: showerAPI,
-        traditional: tradAPI,
-    }
-
     for (let id in elems) {
         let button = document.getElementById(id)
         button.addEventListener("click", () => fortuneGenerator(elems[id], "get"))
@@ -82,7 +81,7 @@ window.addEventListener("load", () => {
 
         fortuneGenerator(searchAPI + searchInput, "search")
     })
-    
+
     //Enter key for search button
     searchField.addEventListener("keypress", (e) => {
         let searchInput = searchField.value
