@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/* This is designed mobile first, a media query at the end handles 
-screens larger than 768px */
+/* This page is designed mobile first, and works well from 320px and up. 
+A media query at the end handles screens larger than 768px */
 
 body {
     background-color: #264653;
@@ -30,8 +30,8 @@ body {
 }
 
 #header > h1 {
-    margin: 0.5rem;
     color: #e9c46a;
+    margin: 0.5rem;
 }
 
 .button-container {
@@ -50,20 +50,16 @@ body {
 button {
     box-sizing: border-box;
     box-shadow: inset 0px 0px 0px #e9c46a;
+    border: none;
     transition: all 0.5s;
     background-color: #e76f51;
     color: white;
-    cursor: pointer;
     margin: 1px;
     padding: 14px 0.5rem;
 }
 
 .button-container > div > button {
     width: 100%;
-}
-
-button:hover {
-    box-shadow: inset 400px 0px 0px #e9c46a;
 }
 
 #search-container {
@@ -81,17 +77,17 @@ button:hover {
 }
 
 #search-field {
-    height: 50px;
-    font-size: 22px;
+    border: none;
+    height: 43px;
+    font-size: 20px;
     margin-left: 0.5rem;
     margin: 1px;
     padding: 14px 0.5rem;
-    width: 100%;
     min-width: 4px;
+    width: 100%;
 }
 
 #search-button-wrapper {
-    flex-wrap: 1;
     width: 50%;
 }
 
@@ -107,7 +103,6 @@ button:hover {
 
 pre {
     white-space: pre-wrap;
-    /* border: 1px solid red; */
     background-color: white;
     overflow-x: hidden;
     padding: 0.5em;
@@ -115,13 +110,14 @@ pre {
 
 #fortune {
     background-color: white;
-    /* border: 1px solid red; */
     padding: 0.5em;
-    /* don't show this until we have data in it */
-    visibility: hidden;
 }
 
 @media screen and (min-width: 768px) {
+    button:hover {
+        box-shadow: inset 400px 0px 0px #e9c46a;
+        cursor: pointer;
+    }
     body {
         margin-left: 20%;
         margin-right: 20%;

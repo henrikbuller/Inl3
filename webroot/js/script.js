@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+/* Author of this version: Henrik Büller, Java20 YRGO
+ */
+
 window.addEventListener("load", () => {
     const randomAPI = "/api/fortune"
     const shortAPI = "/api/short"
@@ -70,7 +73,6 @@ window.addEventListener("load", () => {
     let searchField = document.getElementById("search-field")
     let searchButton = document.getElementById("search-button")
 
-    //Click for search button
     searchButton.addEventListener("click", () => {
         let searchInput = searchField.value
         if (searchInput.length < 3) {
@@ -80,6 +82,7 @@ window.addEventListener("load", () => {
 
         fortuneGenerator(searchAPI + searchInput, "search")
     })
+    
     //Enter key for search button
     searchField.addEventListener("keypress", (e) => {
         let searchInput = searchField.value
