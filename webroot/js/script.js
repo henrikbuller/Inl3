@@ -23,32 +23,33 @@ window.addEventListener("load", () => {
 
     const fortunes = document.getElementById("fortunes")
 
-    
-    
     async function fortuneGenerator(API, action) {
         try {
             let resp = await fetch(API)
+            if (!resp.ok) {
+                throw new Error(resp.statusText)
+            }
             let json = await resp.json()
 
             if (action === "get") {
+                limitOfTen(fortunes)
                 let pre = document.createElement("pre")
                 pre.textContent = json.fortune
                 fortunes.prepend(pre)
-                limitOfTen(fortunes)
             }
             if (action === "search") {
                 let topTenSearch = Array.from(json).slice(0, 10)
 
                 topTenSearch.forEach((element) => {
+                    limitOfTen(fortunes)
                     let pre = document.createElement("pre")
                     pre.textContent = element.fortune
                     fortunes.prepend(pre)
-                    limitOfTen(fortunes)
                 })
             }
-        } catch (err) {
-            console.error(err)
-            window.alert(err)
+        } catch (error) {
+            console.error(error)
+            window.alert("Sorry, something went wrong!\n" + error)
         }
     }
 
@@ -66,29 +67,31 @@ window.addEventListener("load", () => {
         button.addEventListener("click", () => fortuneGenerator(elems[id], "get"))
     }
 
-    //Search field
     let searchField = document.getElementById("search-field")
-
-    let input = searchField.addEventListener("keyup", (e) => {
-        input = e.target.value
-    })
-
-    //Search button
     let searchButton = document.getElementById("search-button")
 
-    //Click for seach button
+    //Click for search button
     searchButton.addEventListener("click", () => {
-        if (input.length < 3 || input.value === null) {
+        let searchInput = searchField.value
+        if (searchInput.length < 3) {
             window.alert("A search must contain at least three characters")
+            return
         }
 
-        fortuneGenerator(searchAPI + input, "search")
+        fortuneGenerator(searchAPI + searchInput, "search")
     })
     //Enter key for search button
     searchField.addEventListener("keypress", (e) => {
+        let searchInput = searchField.value
+
         if (e.key === "Enter") {
+            if (searchInput.length < 3) {
+                window.alert("A search must contain at least three characters")
+                return
+            }
+            console.log(searchInput)
             e.preventDefault()
-            fortuneGenerator(searchAPI + input, "search")
+            fortuneGenerator(searchAPI + searchInput, "search")
         }
     })
 
